@@ -8,3 +8,13 @@ body {
 }
 
 body::-webkit-scrollbar {display: none;}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  --marquee-duration: 30s; /* Default speed */
+  animation: marquee var(--marquee-duration) linear infinite;
+}
