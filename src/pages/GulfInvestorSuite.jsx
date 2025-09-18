@@ -7,7 +7,7 @@ const projectData = {
   hero: {
     title: "Gulf Investor Operators Suite",
     tagline: "Price intelligence MVP, tri‑dialect Arabic chatbot, logistics SaaS, and compliance workflows.",
-    heroImage: "/images/projects/gulf/hero.jpg"
+    heroImage: "https://images.unsplash.com/photo-1600880292210-859b242371ad?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   overview: {
     summary: "Rapid prototyping de-risks investment theses with real user flows across data collection, multilingual AI, and operator tooling.",
@@ -38,15 +38,29 @@ const projectData = {
   techStack: ["React", "GSAP", "Python/Node services", "Multilingual LLM orchestration"]
 };
 
+const Section = ({ title, data }) => (
+    <div className="services-section py-20 px-5 sm:px-32">
+        <h3 className="text-center text-4xl mb-10">{title}</h3>
+        <div className="border-t border-b border-black/30">
+        {data.map((item, index) => (
+            <div key={index} className="service-item py-8 border-b border-black/30 last:border-b-0">
+            <p className="text-2xl sm:text-3xl">{item}</p>
+            </div>
+        ))}
+        </div>
+    </div>
+);
+
 const ProjectPage = () => {
     return (
         <div className="studio-page bg-white text-black">
           <div className="studio-hero relative h-screen w-full flex items-center justify-center overflow-hidden">
             <img
-              className="studio-hero-video absolute top-0 left-0 w-full h-full object-cover opacity-70"
+              className="studio-hero-video absolute top-0 left-0 w-full h-full object-cover"
               src={projectData.hero.heroImage}
+              alt={projectData.hero.title}
             />
-            <div className="z-10 text-white text-center">
+            <div className="z-10 text-white text-center bg-black bg-opacity-50 p-10 rounded-lg">
               <h1 className="text-4xl sm:text-8xl tracking-tighter">
                 <TextReveal>{projectData.hero.title}</TextReveal>
               </h1>
@@ -57,16 +71,11 @@ const ProjectPage = () => {
               <h2 className="text-3xl sm:text-5xl leading-tight sm:w-2/3 mx-auto">{projectData.overview.summary}</h2>
               <p className="mt-4 text-lg">{projectData.overview.context}</p>
           </div>
-          <div className="services-section py-20 px-5 sm:px-32">
-            <h3 className="text-center text-4xl mb-10">Objectives</h3>
-            <div className="border-t border-b border-black/30">
-              {projectData.objectives.map((item, index) => (
-                <div key={index} className="service-item py-8 border-b border-black/30 last:border-b-0">
-                  <p className="text-2xl sm:text-3xl">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <Section title="Objectives" data={projectData.objectives} />
+          <Section title="Approach" data={projectData.approach} />
+          <Section title="Results" data={projectData.results} />
+          <Section title="Features" data={projectData.features} />
+          <Section title="Tech Stack" data={projectData.techStack} />
         </div>
       );
 };
