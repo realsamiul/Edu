@@ -2,8 +2,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import TextReveal from '../Components/TextReveal';
+import SEO from '../Components/SEO'; // Import SEO
 
 const projectData = {
+  seo: {
+    title: "Pharma Demand Forecasting Platform · Case Study",
+    description: "City-level demand projections enabling smarter provisioning, fewer expiries, and better service levels for pharmaceutical distributors."
+  },
   hero: {
     title: "Pharma Demand Forecasting Platform",
     tagline: "City-level demand projections enabling smarter provisioning, fewer expiries, and better service levels.",
@@ -52,6 +57,7 @@ const Section = ({ title, data }) => (
 const ProjectPage = () => {
     return (
         <div className="studio-page bg-white text-black">
+          <SEO title={projectData.seo.title} description={projectData.seo.description} />
           <div className="studio-hero relative h-screen w-full flex items-center justify-center overflow-hidden">
             <img
               className="studio-hero-video absolute top-0 left-0 w-full h-full object-cover"

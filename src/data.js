@@ -1,12 +1,18 @@
 // src/data.js
 
+// --- SEO Data ---
+export const homeSEO = {
+  title: "Samiul Karim | Strategic Intelligence & AI Consulting",
+  description: "AI analytics, executive strategy, and high-performance product execution for energy, manufacturing, logistics, and regulated markets.",
+};
+
 // --- HERO SECTION ---
 export const heroData = {
   headline: "Strategic intelligence that ships",
   subheadline: "AI analytics, executive strategy, and high-performance product execution for energy, manufacturing, logistics, and regulated markets.",
   ctaText: "Book a consultation",
   ctaHref: "/contact",
-  backgroundImage: "https://a.storyblok.com/f/133769/1920x2716/5c24d6b467/exo-ape-hero-1.jpg/m/1920x2716/filters:format(webp):quality(70)",
+  backgroundImage: "https://images.unsplash.com/photo-1556740714-a8395b3bf30f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 };
 
 // --- CREDIBILITY ---

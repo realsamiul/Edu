@@ -1,5 +1,5 @@
 // src/pages/Studio.jsx
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,9 +8,9 @@ import TextReveal from '../Components/TextReveal';
 const transition = (OgComponent) => {
   return () => (
     <motion.div
-      className="bg-white text-black"
+      className="bg-white text-black" // The Studio page has a light theme
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5 } }}
+      animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5 } }} // Delay entry to sync with page transition
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
     >
       <OgComponent />
@@ -20,9 +20,9 @@ const transition = (OgComponent) => {
 
 const StudioPage = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const marqueeRef = useRef(null);
 
   useEffect(() => {
+    // Hero Video Parallax
     gsap.to('.studio-hero-video', {
       scrollTrigger: {
         trigger: '.studio-hero',
@@ -34,6 +34,7 @@ const StudioPage = () => {
     });
   }, []);
   
+  // Data for the page sections
   const values = ["Strategic Intelligence", "Product Execution", "AI-Driven Analytics"];
 
   return (
