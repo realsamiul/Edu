@@ -3,7 +3,7 @@ import React from "react";
 const Story = () => {
   return (
     <div className="overflow-hidden h-[85vh] sm:h-screen">
-      <div data-scroll data-scroll-speed="-0.5" className="relative w-full flex items-center overflow-hidden h-[85vh] sm:h-screen  bg-[#070707] text-[#e0ccbb]">
+      <div className="relative w-full flex items-center overflow-hidden h-[85vh] sm:h-screen  bg-[#070707] text-[#e0ccbb]">
         <div className="absolute w-full max-w-screen-2xl mx-auto px-7 sm:px-28">
           <div className="space-y-7 sm:space-y-10">
             <div>

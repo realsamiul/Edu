@@ -1,6 +1,7 @@
 // src/App.jsx
 import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import Lenis from "lenis";
 import Home from "./pages/Home";
 import Work from "./pages/Work"; // Renamed from Studio
 import Navbar from "./Components/Navbar";
@@ -19,13 +20,27 @@ const App = () => {
   const { isTransitioning } = useTransitionContext();
 
   useEffect(() => {
+    const lenis = new Lenis();
+    
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Connect Lenis with GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
+
     const timer = setTimeout(() => {
       requestAnimationFrame(() => {
         ScrollTrigger.refresh();
       });
     }, 1000); 
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      lenis.destroy();
+    };
   }, [location]);
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 
 const Spread = () => {
   return (
-    <div data-scroll data-scroll-speed="0.2" className="w-full">
+    <div className="w-full">
       <div className="max-w-screen-2xl flex flex-col items-center">
         <div className="flex items-center gap-3">
           <svg

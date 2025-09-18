@@ -31,6 +31,7 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
+
       </div>
 
       {/* Mobile Menu Panel */}
