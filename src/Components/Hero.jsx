@@ -6,7 +6,7 @@ import TextReveal from "./TextReveal";
 import { heroData } from '../data';
 
 const Hero = () => {
-  const { introLines, mainHeadings, subText, backgroundImage } = heroData;
+  const { headline, subheadline, ctaText, ctaHref, backgroundImage } = heroData;
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="hero-main relative w-full h-[150vh] sm:h-[250vh]">
+    <div className="hero-main relative w-full h-[150vh] sm:h-[200vh]">
       <div className="picture w-full h-full overflow-hidden">
         <img
           className="w-full h-full object-cover"
@@ -44,31 +44,22 @@ const Hero = () => {
 
       <div className="absolute w-full top-0 left-0 text-white">
         <div className="max-w-screen-2xl mx-auto px-5 sm:px-32">
-          <div className="para mt-72 sm:mt-96">
-            {introLines.map((line, index) => (
-              <p key={index} className="font-medium text-lg sm:text-2xl leading-snug">
-                <TextReveal>{line}</TextReveal>
-              </p>
-            ))}
-          </div>
-
-          <div className="headings mt-5 sm:mt-10">
-            {mainHeadings.map((heading, index) => (
-              <h1 key={index} className="text-6xl sm:text-[14rem] tracking-tighter leading-none">
-                <TextReveal>{heading}</TextReveal>
+          <div className="headings mt-72 sm:mt-96">
+              <h1 className="text-6xl sm:text-[10rem] tracking-tighter leading-none">
+                <TextReveal>{headline}</TextReveal>
               </h1>
-            ))}
           </div>
-
+          <div className="para mt-5 sm:mt-10 sm:w-2/3">
+              <p className="font-medium text-lg sm:text-2xl leading-snug">
+                <TextReveal>{subheadline}</TextReveal>
+              </p>
+          </div>
           <div className="mt-20 sm:mt-32 sm:w-1/3">
-            <p className="font-medium text-lg sm:text-2xl leading-snug">
-              {subText}
-            </p>
             <a
               className="border-b sm:text-lg border-white inline-block mt-5"
-              href="#"
+              href={ctaHref}
             >
-              The Studio
+              {ctaText}
             </a>
           </div>
         </div>
