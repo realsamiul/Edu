@@ -9,6 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import { useTransitionContext } from "./context/TransitionContext";
 import TransitionOverlay from "./Components/TransitionOverlay";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import Footer from "./Components/Footer"; // Import the new Footer
 
 const App = () => {
   const location = useLocation();
@@ -35,7 +36,7 @@ const App = () => {
           <Route path="/studio" element={<Studio />} />
         </Routes>
       </AnimatePresence>
-      <SpeedInsights />
+      <Footer /> {/* Add the Footer here */}
     </div>
   );
 };
