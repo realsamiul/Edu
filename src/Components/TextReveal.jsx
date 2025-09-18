@@ -1,20 +1,28 @@
-// src/Components/TextReveal.jsx
-import React from "react";
-import { motion } from "framer-motion";
-import { Power4 } from "gsap";
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 const TextReveal = ({ children, className }) => {
+  const el = useRef(null);
+
+  useEffect(() => {
+    gsap.from(el.current, {
+      y: '110%',
+      rotate: 10,
+      duration: 1.2,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: el.current,
+        start: 'top 95%',
+        toggleActions: 'play none none none',
+      },
+    });
+  }, []);
+
   return (
-    <span className={`overflow-hidden inline-block ${className}`}>
-      <motion.span
-        initial={{ y: "110%", rotate: 10 }}
-        whileInView={{ y: 0, rotate: 0 }}
-        viewport={{ once: true }}
-        transition={{ ease: Power4.easeInOut, duration: 1.2 }}
-        className="inline-block origin-left"
-      >
+    <span className={`block overflow-hidden ${className || ''}`}>
+      <span ref={el} className="inline-block origin-left">
         {children}
-      </motion.span>
+      </span>
     </span>
   );
 };
