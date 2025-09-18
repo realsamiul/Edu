@@ -31,7 +31,8 @@ export const services = [
       "Predictive maintenance and quality anomaly detection",
       "Executive dashboards with actionable thresholds and alerts"
     ],
-    "href": "/services/ai-strategic-intelligence"
+    "href": "/services/ai-strategic-intelligence",
+    "backgroundImage": "https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "id": "custom-ai-tools",
@@ -42,7 +43,8 @@ export const services = [
       "Rapid MVPs: price intelligence, chatbots, and logistics tools",
       "Cross-platform delivery with performance-first UI"
     ],
-    "href": "/services/custom-ai-tools"
+    "href": "/services/custom-ai-tools",
+    "backgroundImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "id": "strategic-consulting",
@@ -53,7 +55,8 @@ export const services = [
       "Internationalization and localization strategies",
       "Operating cadence, KPIs, and governance setup"
     ],
-    "href": "/services/strategic-consulting"
+    "href": "/services/strategic-consulting",
+    "backgroundImage": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "id": "websites-seo",
@@ -64,7 +67,8 @@ export const services = [
       "Technical SEO, metadata, and share-ready previews",
       "Analytics-ready funnels and event tracking"
     ],
-    "href": "/services/websites-seo"
+    "href": "/services/websites-seo",
+    "backgroundImage": "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "id": "marketing-writing",
@@ -75,7 +79,8 @@ export const services = [
       "Editorial calendars and distribution playbooks",
       "Case-study storytelling and visuals"
     ],
-    "href": "/services/marketing-writing"
+    "href": "/services/marketing-writing",
+    "backgroundImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ];
 

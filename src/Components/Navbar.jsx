@@ -15,7 +15,7 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="links hidden sm:flex items-center gap-10">
           <TransitionLink to="/" className="text-sm">Home</TransitionLink>
-          <TransitionLink to="/studio" className="text-sm">About</TransitionLink>
+          <TransitionLink to="/work" className="text-sm">Work</TransitionLink> {/* Updated Link */}
           <a href="#" className="text-sm">Contact</a>
         </div>
         
@@ -37,7 +37,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="sm:hidden fixed top-0 left-0 w-full h-full bg-zinc-900 flex flex-col items-center justify-center space-y-8">
           <TransitionLink to="/" onClick={() => setIsOpen(false)} className="text-3xl">Home</TransitionLink>
-          <TransitionLink to="/studio" onClick={() => setIsOpen(false)} className="text-3xl">About</TransitionLink>
+          <TransitionLink to="/work" onClick={() => setIsOpen(false)} className="text-3xl">Work</TransitionLink>
           <a href="#" onClick={() => setIsOpen(false)} className="text-3xl">Contact</a>
         </div>
       )}
