@@ -1,32 +1,12 @@
+// src/Components/Hero.jsx
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect } from "react";
+import TextReveal from "./TextReveal";
 
 const Hero = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    const tl = gsap.timeline();
-
-    tl.from(".para p span", {
-      y: "100%",
-      rotate: 15,
-      stagger: 0.05,
-      duration: 1,
-      ease: "power3.out",
-    });
-
-    tl.from(
-      ".headings h1 span",
-      {
-        y: "100%",
-        rotate: 10,
-        stagger: 0.05,
-        duration: 1,
-        ease: "power3.out",
-      },
-      "-=0.75"
-    );
 
     gsap.to(".picture img", {
       scrollTrigger: {
@@ -50,10 +30,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="hero-main relative w-full h-[150vh] sm:h-[270vh]">
-      <span className="absolute scroll-down hidden sm:block z-[2] right-[10vh] top-[87vh] text-white text-sm">
-        Scroll to explore
-      </span>
+    <div className="hero-main relative w-full h-[150vh] sm:h-[250vh]">
       <div className="picture w-full h-full overflow-hidden">
         <img
           className="w-full h-full object-cover"
@@ -62,30 +39,33 @@ const Hero = () => {
         />
       </div>
 
-      <div className="absolute w-full top-0 left-0">
-        <div className="text text-white max-w-screen-2xl mx-auto h-full px-5 sm:px-32">
+      <div className="absolute w-full top-0 left-0 text-white">
+        <div className="max-w-screen-2xl mx-auto px-5 sm:px-32">
           <div className="para mt-72 sm:mt-96">
-            {[
-              "Global digital design studio partnering",
-              "with brands and businesses that create",
-              "exceptional experiences where people",
-              "live, work, and unwind.",
-            ].map((item, index) => (
-              <p className="font-medium overflow-hidden text-lg sm:text-2xl" key={index}>
-                <span className="block">{item}</span>
-              </p>
-            ))}
+            <p className="font-medium text-lg sm:text-2xl leading-snug">
+              <TextReveal>Global digital design studio partnering</TextReveal>
+            </p>
+            <p className="font-medium text-lg sm:text-2xl leading-snug">
+              <TextReveal>with brands and businesses that create</TextReveal>
+            </p>
+            <p className="font-medium text-lg sm:text-2xl leading-snug">
+              <TextReveal>exceptional experiences where people</TextReveal>
+            </p>
+            <p className="font-medium text-lg sm:text-2xl leading-snug">
+              <TextReveal>live, work, and unwind.</TextReveal>
+            </p>
           </div>
 
           <div className="headings mt-5 sm:mt-10">
-            {["Digital", "Design", "Experience"].map((item, index) => (
-              <h1
-                className="text-6xl overflow-hidden sm:text-[15rem] tracking-tighter leading-none"
-                key={index}
-              >
-                <span className="block">{item}</span>
-              </h1>
-            ))}
+            <h1 className="text-6xl sm:text-[14rem] tracking-tighter leading-none">
+              <TextReveal>Digital</TextReveal>
+            </h1>
+            <h1 className="text-6xl sm:text-[14rem] tracking-tighter leading-none">
+              <TextReveal>Design</TextReveal>
+            </h1>
+            <h1 className="text-6xl sm:text-[14rem] tracking-tighter leading-none">
+              <TextReveal>Experience</TextReveal>
+            </h1>
           </div>
 
           <div className="mt-20 sm:mt-32 sm:w-1/3">
@@ -94,12 +74,18 @@ const Hero = () => {
               audience feel the refined intricacies of their brand and product
               in the digital space. Unforgettable journeys start with a click.
             </p>
-            <a className="border-b sm:text-lg border-white inline-block mt-5" href="#">
+            <a
+              className="border-b sm:text-lg border-white inline-block mt-5"
+              href="#"
+            >
               The Studio
             </a>
           </div>
         </div>
       </div>
+      <span className="absolute scroll-down hidden sm:block z-[2] right-[10vh] bottom-[10vh] text-white text-sm">
+        Scroll to explore
+      </span>
     </div>
   );
 };

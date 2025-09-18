@@ -1,6 +1,7 @@
+// src/Components/Work.jsx
 import { motion } from "framer-motion";
-import { Power4 } from "gsap/all";
 import React from "react";
+import TextReveal from "./TextReveal";
 
 const Work = () => {
   const elems = [
@@ -36,19 +37,12 @@ const Work = () => {
       </div>
 
       <div className="mt-10 sm:mt-20">
-        <h2 className="text-7xl sm:text-[14rem] tracking-tight overflow-hidden">
-          <motion.span
-            initial={{ y: "100%", rotate: 20 }}
-            whileInView={{ y: 0, rotate: 0 }}
-            viewport={{ once: true }}
-            transition={{ ease: Power4.easeInOut, duration: 1 }}
-            className="inline-block origin-left"
-          >
-            Work
-          </motion.span>
+        <h2 className="text-7xl sm:text-[14rem] tracking-tight">
+          <TextReveal>Work</TextReveal>
         </h2>
         <p className="text-lg leading-snug sm:text-xl sm:w-2/3 mt-5">
-          Highlights of cases that we passionately built with forward-thinking clients and friends over the years.
+          Highlights of cases that we passionately built with forward-thinking
+          clients and friends over the years.
         </p>
       </div>
 
@@ -57,7 +51,8 @@ const Work = () => {
           <div key={index} className="elem w-full sm:w-[48%] mb-10">
             <div className="image-container relative w-full h-[104vw] sm:h-[40vw] overflow-hidden">
               <motion.img
-                whileHover={{ scale: 0.95 }}
+                loading="lazy"
+                whileHover={{ scale: 1.05 }}
                 transition={{ ease: "linear", duration: 0.2 }}
                 className="w-full h-full object-cover"
                 src={item.image}
